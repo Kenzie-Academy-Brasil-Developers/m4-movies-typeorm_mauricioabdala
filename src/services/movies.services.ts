@@ -1,5 +1,5 @@
 import { Movie } from "../entities";
-import { MovieCreate } from "../interfaces/movie.interfaces";
+import { MovieCreate, MovieUpdate } from "../interfaces/movie.interfaces";
 import { Pagination, PaginationParams } from "../interfaces/pagination.interface";
 import { movieRepo } from "../repositories";
 
@@ -24,7 +24,7 @@ export const readMovieService = async ({ nextPage, page, perPage, prevPage, orde
     };
 };
 
-export const updateMovieService = async (movie: Movie, payload: Partial<Movie>): Promise<Movie> => {
+export const updateMovieService = async (movie: Movie, payload: MovieUpdate): Promise<Movie> => {
     return await movieRepo.save({ ...movie, ...payload });
 };
 
