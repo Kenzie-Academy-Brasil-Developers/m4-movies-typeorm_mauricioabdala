@@ -20,7 +20,7 @@ export const pagination = (req: Request, res: Response, next: NextFunction): voi
         perPage = 5;
     };
 
-    const baseUrl: string = `http://locallhost:${process.env.PORT}/movies`
+    const baseUrl: string = `http://localhost:3000/movies`
     const prevPage: string = `${baseUrl}?page=${page - 1}&perPage=${perPage}`
     const nextPage: string = `${baseUrl}?page=${page + 1}&perPage=${perPage}`
 
