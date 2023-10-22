@@ -1,5 +1,5 @@
-import { Repository } from "typeorm";
 import { Movie } from "./entities";
 import { AppDataSource } from "./data-source";
+import { MovieRepo } from "./interfaces/movie.interfaces";
 
-export const movieRepo: Repository<Movie> = AppDataSource.getRepository(Movie);
+export const movieRepo: MovieRepo = AppDataSource.getRepository(Movie);
