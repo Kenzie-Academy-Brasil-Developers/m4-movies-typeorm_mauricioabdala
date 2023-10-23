@@ -21,7 +21,7 @@ export const readMovieService = async ({ nextPage, page, perPage, prevPage, orde
         nextPage: count - page <= perPage ? null : nextPage,
         count,
         data: movies
-        
+
     };
 };
 

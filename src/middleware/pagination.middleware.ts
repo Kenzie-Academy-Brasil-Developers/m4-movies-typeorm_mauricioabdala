@@ -1,6 +1,6 @@
 import { NextFunction, Request, Response } from "express";
 import { PaginationParams } from "../interfaces/pagination.interface";
-import 'dotenv/config'
+import 'dotenv/config';
 
 export const pagination = (req: Request, res: Response, next: NextFunction): void => {
     const queryPage: number = Number(req.query.page);

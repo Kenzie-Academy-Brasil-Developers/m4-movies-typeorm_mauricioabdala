@@ -5,8 +5,8 @@ import { DataSource, DataSourceOptions } from 'typeorm';
 
 const dataSourceConfig = (): DataSourceOptions => {
 
-    const entitiesPath: string = path.join(__dirname, './entities/**.{ts,js}')
-    const migrationsPath: string = path.join(__dirname, './migrations/**.{ts,js}')
+    const entitiesPath: string = path.join(__dirname, './entities/**.{ts,js}');
+    const migrationsPath: string = path.join(__dirname, './migrations/**.{ts,js}');
 
     const nodeEnv: string | undefined = process.env.NODE_ENV;
 
@@ -15,7 +15,7 @@ const dataSourceConfig = (): DataSourceOptions => {
             type: 'sqlite',
             database: ":memory:",
             synchronize: true,
-            entities: [entitiesPath],
+            entities: [entitiesPath]
         };
     };
 
@@ -31,7 +31,7 @@ const dataSourceConfig = (): DataSourceOptions => {
         synchronize: false,
         logging: true,
         entities: [entitiesPath],
-        migrations: [migrationsPath],
+        migrations: [migrationsPath]
     };
 };
 

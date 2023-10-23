@@ -1,6 +1,5 @@
 import { Request, Response } from "express";
 import { createMovieService, deleteMovieService, readMovieService, updateMovieService } from "../services/movies.services";
-import { Movie } from "../entities";
 import { Pagination } from "../interfaces/pagination.interface";
 import { MovieCreate, MovieUpdate } from "../interfaces/movie.interfaces";
 
