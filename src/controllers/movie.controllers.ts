@@ -2,9 +2,10 @@ import { Request, Response } from "express";
 import { createMovieService, deleteMovieService, readMovieService, updateMovieService } from "../services/movies.services";
 import { Movie } from "../entities";
 import { Pagination } from "../interfaces/pagination.interface";
+import { MovieCreate, MovieUpdate } from "../interfaces/movie.interfaces";
 
 export const createMovieController = async (req: Request, res: Response): Promise<Response> => {
-    const movie: Movie = await createMovieService(req.body);
+    const movie: MovieCreate = await createMovieService(req.body);
 
     return res.status(201).json(movie);
 };
@@ -18,7 +19,7 @@ export const readMovieController = async (req: Request, res: Response): Promise<
 export const updateMovieController = async (req: Request, res: Response): Promise<Response> => {
     const { verifyId } = res.locals;
     const { body } = req;
-    const movie: Movie = await updateMovieService(verifyId, body);
+    const movie: MovieUpdate = await updateMovieService(verifyId, body);
 
     return res.status(200).json(movie);
 };

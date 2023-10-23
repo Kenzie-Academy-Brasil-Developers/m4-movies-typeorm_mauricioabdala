@@ -14,5 +14,5 @@ movieRouter.get('/', pagination, readMovieController);
 
 movieRouter.use('/:movieId', verifyIdExists);
 
-movieRouter.patch('/:movieId', validateBody(movieUpdateSchema), verifyNameExists, verifyIdExists, updateMovieController);
-movieRouter.delete('/:movieId', verifyIdExists, deleteMovieController);
+movieRouter.patch('/:movieId', validateBody(movieUpdateSchema), verifyNameExists, updateMovieController);
+movieRouter.delete('/:movieId', deleteMovieController);
