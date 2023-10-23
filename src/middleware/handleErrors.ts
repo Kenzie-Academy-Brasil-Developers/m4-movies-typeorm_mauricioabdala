@@ -8,7 +8,7 @@ export const handleErrors = (err: unknown, req: Request, res: Response, next: Ne
     };
 
     if (err instanceof z.ZodError) {
-        return res.status(400).json(err.flatten().fieldErrors);
+        return res.status(400).json({message: err.flatten().fieldErrors});
     };
 
     console.log(err);
